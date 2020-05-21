@@ -6,13 +6,11 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
     <div class="Container">
     <h1 class="title">Password Generator</h1>
-    <h3 id="passwordDisplay">Display</h3>
+    <input type="text" id="passwordDisplay" value="Display" readonly>
     <span class="copyspan"><button class="copy" id="copyid">Copy</button></span>
     <form class="form-container" id="formid">
         <label for="NumberOfCharater">Number Of Charater</label>
@@ -23,13 +21,13 @@
 
 
         <label for="IncludeUppercase">Include Uppercase</label>
-        <input type="checkbox"  id="IncludeUppercase">
+        <input type="checkbox" class="checkbox" id="IncludeUppercase">
 
         <label for="IncludeNumbers">Include Numbers</label>
-        <input type="checkbox"  id="IncludeNumbers">
+        <input type="checkbox" class="checkbox" id="IncludeNumbers">
 
         <label for="IncludeSymbols">Include Symbols</label>
-        <input type="checkbox"  id="IncludeSymbols">
+        <input type="checkbox" class="checkbox" id="IncludeSymbols">
 
         <button class="btn" id="btnid"  type="submit">Generate Password</button>
     </form>

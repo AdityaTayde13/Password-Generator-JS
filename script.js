@@ -12,7 +12,8 @@ submit.addEventListener("click", e => {
     const IncludeSymbol = symbolid.checked;
     const IncludeNumbers = numberid.checked;
     const password = generatePassword(IncludeNumberofChar,IncludeUppercase,IncludeSymbol,IncludeNumbers)
-    passwordDisplay.innerText = password
+    passwordDisplay.value  = password
+    submit.style.backgroundColor = "transparent"
      
 })
 NumberofCharAmount.addEventListener("input",SyncRangeAmount);
@@ -53,7 +54,16 @@ function ArrayFromLowToHigh(low,High){
 
 copyelement = document.getElementById("copyid");
 copyelement.addEventListener("click", e => {
-        const CopyText = passwordDisplay.innerText;;
-        console.log(CopyText)
-        document.execCommand("copy")
+        const CopyText = passwordDisplay;
+        if(CopyText.value == "Display"){
+             CopyText.value = "Click on  Generate Password Button" }
+             else if (CopyText.value == "Click on  Generate Password Button") {
+                submit.style.backgroundColor = "Red"
+             } 
+             else {
+            CopyText.select();
+            CopyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            CopyText.value = "Password Copied"
+        }
 })
